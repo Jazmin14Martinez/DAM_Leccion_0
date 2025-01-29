@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DAM_Leccion_LMG.MainPage">
+              xmlns:Leccion2="DAM_Leccion_LMG.Model" 
 
+             x:Class="DAM_Leccion_LMG.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Leccion2:PersonaModel x:Key="persona"Nombre="Sofia"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+            
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -33,7 +40,8 @@
             <Entry
                 x:Name="txtNombre"
                 HorizontalOptions="FillAndExpand"
-                Placeholder="Escribe un nombre"/>
+                Placeholder="Escribe un nombre"
+                Text="{Binding Nombre}"/>
             <Button 
                 x:Name="btnAceptar"
                 Clicked="btnAceptar_Clicked"

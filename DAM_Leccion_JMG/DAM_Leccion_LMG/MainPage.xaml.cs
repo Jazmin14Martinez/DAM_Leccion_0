@@ -25,11 +25,21 @@ namespace DAM_Leccion_LMG
         }
         public void Ejecutar()
         {
-            PersonaModel personaModel = new PersonaModel();
+            PersonaModel personaModel = new PersonaModel()
+            {
+                Nombre = "Hola aqui estoy"
+            };
 
-            personaModel.Nombre = "Hola aqui estoy";
+            BindingContext = personaModel.Nombre;
+        
+            //txtNombre.Text = personaModel.Nombre;
 
-            txtNombre.Text = personaModel.Nombre;
+            //Binding personaBinding = new Binding();
+
+
+            //personaBinding.Source = personaModel; //origen
+            //personaBinding.Path = "Nombre"; //ruta
+            //txtNombre.SetBinding(Entry.TextProperty, personaBinding); //Destino
         }
 
         private void btnAceptar_Clicked(object sender, EventArgs e)
